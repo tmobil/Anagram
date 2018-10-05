@@ -9,13 +9,19 @@ Assume words are available in a dictionary.
 https://github.com/tmobil/anagram/blob/master/english.json
 
 Input: car
+
 Output: arc   
 
+
 Input: tar
+
 Output: rat   
 
+
 Input: elbow
+
 Output: below   
+
 
 Feel free to be creative, considering options such as words of differing character lengths, memory and performance considerations for the project.      
 
