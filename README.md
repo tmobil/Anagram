@@ -3,7 +3,7 @@ Anagram problem
 
 Anagram are words created by rearranging the letters of the original word to make a new words
 
- Given a valid dictionary and an input string, writ a program to find all anagram valid words from the dictionary. 
+ Given a dictionary and an input string, writ a program to find all anagram valid words from the dictionary. 
 
 Assume words are available in a dictionary.
 https://github.com/tmobil/anagram/blob/master/english.json
