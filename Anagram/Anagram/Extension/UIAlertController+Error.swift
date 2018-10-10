@@ -15,9 +15,9 @@ extension UIAlertController
         return alert(withTitle: "Error", message: message, handler: handler)
     }
 
-    class func infoAlert(withMessage message: String) -> UIAlertController
+    class func infoAlert(withMessage message: String, handler: VoidClosure? = nil) -> UIAlertController
     {
-        return alert(withTitle: nil, message: message)
+        return alert(withTitle: "Info", message: message, handler: handler)
     }
 
     private class func alert(withTitle title: String?, message: String, handler: VoidClosure? = nil) -> UIAlertController

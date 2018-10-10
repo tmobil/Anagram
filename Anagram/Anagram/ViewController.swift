@@ -39,12 +39,30 @@ class ViewController: UIViewController
             case .error(let errorMessage):
                 self.activityIndicator.hide {
                     self.presentErrorAlert(withMessage: errorMessage) {
-                        runOnMainThread {
-                            self.fetchAgainButton.isHidden = false
-                        }
+                        self.loadJSONFromBundle()
                     }
                 }
                 break;
+            }
+        }
+    }
+
+    private func loadJSONFromBundle()
+    {
+        self.presentInfoAlert(withMessage: "Dictionary from bundle is going to be loaded.") {
+            self.activityIndicator.show(withText: "Loading dictionary")
+            JSONFetchService.loadJSONFromBundle { (entries) in
+                if let entries = entries {
+                    self.model = DictionaryModel(entries: entries)
+                    self.activityIndicator.hide {
+                        self.searchInputView.isHidden = false
+                    }
+                }
+                else {
+                    self.activityIndicator.hide {
+                        self.presentErrorAlert(withMessage: "Unable to load dictionary from bundle.")
+                    }
+                }
             }
         }
     }
@@ -106,9 +124,9 @@ extension ViewController
         self.present(errorAlert, animated: true, completion: nil)
     }
 
-    fileprivate func presentInfoAlert(withMessage message: String)
+    fileprivate func presentInfoAlert(withMessage message: String, handler: VoidClosure? = nil)
     {
-        let infoAlert = UIAlertController.infoAlert(withMessage: message)
+        let infoAlert = UIAlertController.infoAlert(withMessage: message, handler: handler)
         self.present(infoAlert, animated: true, completion: nil)
     }
 }
