@@ -46,4 +46,22 @@ class JSONFetchService
         }
         dataTask.resume()
     }
+
+    class func loadJSONFromBundle(completion: @escaping (DictionaryEntries?) -> Void)
+    {
+        guard let path = Bundle.main.url(forResource: "english", withExtension: "json") else {
+            return completion(nil)
+        }
+
+        DispatchQueue.global(qos: .userInitiated).async {
+            do {
+                let data = try Data(contentsOf: path)
+                let entries = try JSONDecoder().decode(DictionaryEntries.self, from: data)
+                return completion(entries)
+            }
+            catch {
+                return completion(nil)
+            }
+        }
+    }
 }

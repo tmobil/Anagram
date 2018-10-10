@@ -20,6 +20,7 @@
 		B8D088E1216E3DEA00C5764C /* URLSessionMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088E0216E3DEA00C5764C /* URLSessionMocks.swift */; };
 		B8D088E3216E3E4C00C5764C /* JSONFetchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088E2216E3E4C00C5764C /* JSONFetchServiceTests.swift */; };
 		B8D088E5216E45D900C5764C /* TestDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088E4216E45D900C5764C /* TestDictionary.swift */; };
+		B8D088E6216E5EF900C5764C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = B8D088DE216E322800C5764C /* english.json */; };
 		B8DE4D53216D60D30074B253 /* UIAlertController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE4D52216D60D30074B253 /* UIAlertController+Error.swift */; };
 		B8DE4D55216D88120074B253 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE4D54216D88120074B253 /* Tools.swift */; };
 /* End PBXBuildFile section */
@@ -238,6 +239,7 @@
 			files = (
 				B84F13EE216C08B2009DDA4F /* LaunchScreen.storyboard in Resources */,
 				B84F13EB216C08B2009DDA4F /* Assets.xcassets in Resources */,
+				B8D088E6216E5EF900C5764C /* english.json in Resources */,
 				B84F13E6216C08B1009DDA4F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
