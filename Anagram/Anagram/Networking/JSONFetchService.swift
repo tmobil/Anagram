@@ -33,6 +33,9 @@ class JSONFetchService
 
             do {
                 let entries = try JSONDecoder().decode(DictionaryEntries.self, from: data)
+                if entries.count == 0 {
+                    return completion(.error("The fetched dictionary source is empty."))
+                }
                 return completion(.success(entries))
             }
             catch {

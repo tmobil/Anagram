@@ -12,10 +12,11 @@
 		B84F13E6216C08B1009DDA4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F13E4216C08B1009DDA4F /* Main.storyboard */; };
 		B84F13EB216C08B2009DDA4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B84F13EA216C08B2009DDA4F /* Assets.xcassets */; };
 		B84F13EE216C08B2009DDA4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B84F13EC216C08B2009DDA4F /* LaunchScreen.storyboard */; };
-		B84F13F9216C08B3009DDA4F /* AnagramTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F13F8216C08B3009DDA4F /* AnagramTests.swift */; };
 		B84F1405216C3129009DDA4F /* JSONFetchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F1404216C3129009DDA4F /* JSONFetchService.swift */; };
 		B84F1408216C4EEB009DDA4F /* DictionaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F1407216C4EEB009DDA4F /* DictionaryModel.swift */; };
 		B84F140B216D0B53009DDA4F /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F140A216D0B53009DDA4F /* ActivityIndicatorView.swift */; };
+		B8D088DD216E1B9A00C5764C /* DictionaryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088DC216E1B9A00C5764C /* DictionaryModelTests.swift */; };
+		B8D088DF216E322900C5764C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = B8D088DE216E322800C5764C /* english.json */; };
 		B8DE4D53216D60D30074B253 /* UIAlertController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE4D52216D60D30074B253 /* UIAlertController+Error.swift */; };
 		B8DE4D55216D88120074B253 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE4D54216D88120074B253 /* Tools.swift */; };
 /* End PBXBuildFile section */
@@ -39,11 +40,12 @@
 		B84F13ED216C08B2009DDA4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B84F13EF216C08B2009DDA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B84F13F4216C08B3009DDA4F /* AnagramTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnagramTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B84F13F8216C08B3009DDA4F /* AnagramTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnagramTests.swift; sourceTree = "<group>"; };
 		B84F13FA216C08B3009DDA4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B84F1404216C3129009DDA4F /* JSONFetchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFetchService.swift; sourceTree = "<group>"; };
 		B84F1407216C4EEB009DDA4F /* DictionaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryModel.swift; sourceTree = "<group>"; };
 		B84F140A216D0B53009DDA4F /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		B8D088DC216E1B9A00C5764C /* DictionaryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryModelTests.swift; sourceTree = "<group>"; };
+		B8D088DE216E322800C5764C /* english.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
 		B8DE4D52216D60D30074B253 /* UIAlertController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Error.swift"; sourceTree = "<group>"; };
 		B8DE4D54216D88120074B253 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -104,8 +106,9 @@
 		B84F13F7216C08B3009DDA4F /* AnagramTests */ = {
 			isa = PBXGroup;
 			children = (
-				B84F13F8216C08B3009DDA4F /* AnagramTests.swift */,
+				B8D088DE216E322800C5764C /* english.json */,
 				B84F13FA216C08B3009DDA4F /* Info.plist */,
+				B8D088DC216E1B9A00C5764C /* DictionaryModelTests.swift */,
 			);
 			path = AnagramTests;
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D088DF216E322900C5764C /* english.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B84F13F9216C08B3009DDA4F /* AnagramTests.swift in Sources */,
+				B8D088DD216E1B9A00C5764C /* DictionaryModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +424,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobica.tmo.Anagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -438,7 +442,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.mobica.tmo.Anagram;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

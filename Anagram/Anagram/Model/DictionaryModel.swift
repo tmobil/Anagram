@@ -22,12 +22,17 @@ class DictionaryModel
 
     func anagramsFor(word: String, completion: @escaping ([String]?) -> ())
     {
+        guard word.count > 1 else {
+            return completion(nil)
+        }
+
         DispatchQueue.global(qos: .userInitiated).async {
             if let hashedWordsOfLength = self.hashSet[word.count] {
                 return completion(self.findHashedWord(word, inHashed: hashedWordsOfLength))
             }
 
-            if let filteredByLength = self.words?.filter({ $0.count == word.count }) {
+            if let filteredByLength = self.words?.filter({ $0.count == word.count }),
+                filteredByLength.count > 0 {
                 self.words = self.words?.subtracting(filteredByLength)
                 let justHashed = self.buildHash(ofWords: filteredByLength)
                 self.hashSet[word.count] = justHashed
