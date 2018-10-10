@@ -11,30 +11,6 @@ import XCTest
 
 class DictionaryModelTests: XCTestCase
 {
-    var wordDictionary: DictionaryEntries {
-        var wordDictionary = DictionaryEntries()
-        wordDictionary["Car"] = [String]()
-        wordDictionary["Arc"] = [String]()
-        wordDictionary["Rat"] = [String]()
-        wordDictionary["Elbow"] = [String]()
-        wordDictionary["Below"] = [String]()
-        return wordDictionary
-    }
-
-    var jsonDictionary: DictionaryEntries? {
-        if let path = Bundle(for: DictionaryModelTests.self).url(forResource: "english", withExtension: "json") {
-            do {
-                let data = try Data(contentsOf: path)
-                let entries = try JSONDecoder().decode(DictionaryEntries.self, from: data)
-                return entries
-            }
-            catch {
-                return nil
-            }
-        }
-        return nil
-    }
-
     func testAnagramsForTooShortWord()
     {
         // given
@@ -42,8 +18,8 @@ class DictionaryModelTests: XCTestCase
 
         // when
         let expectation = self.expectation(description: "\(#function)")
-        let model = DictionaryModel(entries: wordDictionary)
-        var anagrams: [String]?
+        let model = DictionaryModel(entries: TestDictionary.wordDictionary)
+        var anagrams: Set<String>?
 
         model.anagramsFor(word: word) { (result) in
             anagrams = result
@@ -62,8 +38,8 @@ class DictionaryModelTests: XCTestCase
 
         // when
         let expectation = self.expectation(description: "\(#function)")
-        let model = DictionaryModel(entries: wordDictionary)
-        var anagrams: [String]?
+        let model = DictionaryModel(entries: TestDictionary.wordDictionary)
+        var anagrams: Set<String>?
 
         model.anagramsFor(word: word) { (result) in
             anagrams = result
@@ -82,8 +58,8 @@ class DictionaryModelTests: XCTestCase
 
         // when
         let expectation = self.expectation(description: "\(#function)")
-        let model = DictionaryModel(entries: wordDictionary)
-        var anagrams: [String]?
+        let model = DictionaryModel(entries: TestDictionary.wordDictionary)
+        var anagrams: Set<String>?
 
         model.anagramsFor(word: word) { (result) in
             anagrams = result
@@ -102,8 +78,8 @@ class DictionaryModelTests: XCTestCase
 
         // when
         let expectation = self.expectation(description: "\(#function)")
-        let model = DictionaryModel(entries: wordDictionary)
-        var anagrams: [String]?
+        let model = DictionaryModel(entries: TestDictionary.wordDictionary)
+        var anagrams: Set<String>?
 
         model.anagramsFor(word: word) { (result) in
             anagrams = result
@@ -122,8 +98,8 @@ class DictionaryModelTests: XCTestCase
 
         // when
         let expectation = self.expectation(description: "\(#function)")
-        let model = DictionaryModel(entries: wordDictionary)
-        var anagrams: [String]?
+        let model = DictionaryModel(entries: TestDictionary.wordDictionary)
+        var anagrams: Set<String>?
 
         model.anagramsFor(word: word) { (result) in
             anagrams = result
@@ -146,8 +122,8 @@ class DictionaryModelTests: XCTestCase
 
         // when
         let expectation = self.expectation(description: "\(#function)")
-        let model = DictionaryModel(entries: wordDictionary)
-        var anagrams: [String]?
+        let model = DictionaryModel(entries: TestDictionary.wordDictionary)
+        var anagrams: Set<String>?
 
         model.anagramsFor(word: word) { (result) in
             anagrams = result
@@ -166,12 +142,12 @@ class DictionaryModelTests: XCTestCase
 
         // when1
         var expectation = self.expectation(description: "\(#function) 1st run")
-        guard let jsonDictionary = jsonDictionary else {
+        guard let jsonDictionary = TestDictionary.jsonDictionary else {
             XCTFail("Unable to load dictionary from JSON.")
             return
         }
         let model = DictionaryModel(entries: jsonDictionary)
-        var anagrams1: [String]?
+        var anagrams1: Set<String>?
 
         var start = DispatchTime.now()
         var executionTime1: UInt64 = 0
@@ -187,7 +163,7 @@ class DictionaryModelTests: XCTestCase
 
         // when2
         expectation = self.expectation(description: "\(#function) 2nd run")
-        var anagrams2: [String]?
+        var anagrams2: Set<String>?
 
         start = DispatchTime.now()
         var executionTime2: UInt64 = 0

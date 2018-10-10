@@ -13,17 +13,19 @@ enum FetchResult<T> {
     case error(String)
 }
 
+let englishDictionaryURLAsString = "https://raw.githubusercontent.com/tmobil/Anagram/master/english.json"
+
 class JSONFetchService
 {
-    private static let jsonURLString = "https://raw.githubusercontent.com/tmobil/Anagram/master/english.json"
-
-    class func fetchData(completion: @escaping (FetchResult<DictionaryEntries>) -> Void)
+    class func fetchData(withSession session: URLSession = .shared,
+                         urlString: String = englishDictionaryURLAsString,
+                         completion: @escaping (FetchResult<DictionaryEntries>) -> Void)
     {
-        guard let jsonURL = URL(string: jsonURLString) else {
+        guard let jsonURL = URL(string: urlString) else {
             return completion(.error("Unable to build a valid URL."))
         }
 
-        let dataTask = URLSession.shared.dataTask(with: jsonURL) { (data, response, error) -> Void in
+        let dataTask = session.dataTask(with: jsonURL) { (data, response, error) -> Void in
             guard error == nil else {
                 return completion(.error(error!.localizedDescription))
             }

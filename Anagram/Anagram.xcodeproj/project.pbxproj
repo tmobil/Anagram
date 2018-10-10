@@ -17,6 +17,9 @@
 		B84F140B216D0B53009DDA4F /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B84F140A216D0B53009DDA4F /* ActivityIndicatorView.swift */; };
 		B8D088DD216E1B9A00C5764C /* DictionaryModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088DC216E1B9A00C5764C /* DictionaryModelTests.swift */; };
 		B8D088DF216E322900C5764C /* english.json in Resources */ = {isa = PBXBuildFile; fileRef = B8D088DE216E322800C5764C /* english.json */; };
+		B8D088E1216E3DEA00C5764C /* URLSessionMocks.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088E0216E3DEA00C5764C /* URLSessionMocks.swift */; };
+		B8D088E3216E3E4C00C5764C /* JSONFetchServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088E2216E3E4C00C5764C /* JSONFetchServiceTests.swift */; };
+		B8D088E5216E45D900C5764C /* TestDictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D088E4216E45D900C5764C /* TestDictionary.swift */; };
 		B8DE4D53216D60D30074B253 /* UIAlertController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE4D52216D60D30074B253 /* UIAlertController+Error.swift */; };
 		B8DE4D55216D88120074B253 /* Tools.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE4D54216D88120074B253 /* Tools.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +49,9 @@
 		B84F140A216D0B53009DDA4F /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		B8D088DC216E1B9A00C5764C /* DictionaryModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryModelTests.swift; sourceTree = "<group>"; };
 		B8D088DE216E322800C5764C /* english.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = english.json; sourceTree = "<group>"; };
+		B8D088E0216E3DEA00C5764C /* URLSessionMocks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionMocks.swift; sourceTree = "<group>"; };
+		B8D088E2216E3E4C00C5764C /* JSONFetchServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONFetchServiceTests.swift; sourceTree = "<group>"; };
+		B8D088E4216E45D900C5764C /* TestDictionary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDictionary.swift; sourceTree = "<group>"; };
 		B8DE4D52216D60D30074B253 /* UIAlertController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Error.swift"; sourceTree = "<group>"; };
 		B8DE4D54216D88120074B253 /* Tools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tools.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -109,6 +115,9 @@
 				B8D088DE216E322800C5764C /* english.json */,
 				B84F13FA216C08B3009DDA4F /* Info.plist */,
 				B8D088DC216E1B9A00C5764C /* DictionaryModelTests.swift */,
+				B8D088E0216E3DEA00C5764C /* URLSessionMocks.swift */,
+				B8D088E2216E3E4C00C5764C /* JSONFetchServiceTests.swift */,
+				B8D088E4216E45D900C5764C /* TestDictionary.swift */,
 			);
 			path = AnagramTests;
 			sourceTree = "<group>";
@@ -262,7 +271,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D088E1216E3DEA00C5764C /* URLSessionMocks.swift in Sources */,
 				B8D088DD216E1B9A00C5764C /* DictionaryModelTests.swift in Sources */,
+				B8D088E3216E3E4C00C5764C /* JSONFetchServiceTests.swift in Sources */,
+				B8D088E5216E45D900C5764C /* TestDictionary.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

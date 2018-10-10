@@ -49,7 +49,7 @@ class ViewController: UIViewController
         }
     }
 
-    private func processResults(forWord word: String, anagrams: [String]?)
+    private func processResults(forWord word: String, anagrams: Set<String>?)
     {
         runOnMainThread {
             if let anagrams = anagrams {
